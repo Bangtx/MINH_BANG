@@ -10,8 +10,8 @@ NgaySinh      30      11      D
 MaTruong      41       4      C
 164
 0013 Nguyen Minh    Quang  0 10/07/1984 LHP 
-0014 Trang Phi      Hung   0 02/11/1984 LHP 
-0019 Nguyen Kim     Toan   1 07/07/1984 LHP 
+0014 Trang Phi      Hung   0 02/11/1984 LHP
+0019 Nguyen Kim     Toan   1 07/07/1984 LHP
 0020 Nguyen Bich    Lien   1 27/05/1984 LHP 
 0037 Tran           Khiem  0 04/12/1983 LHP 
 0038 Le Bich        Phuong 1 24/07/1983 LHP 

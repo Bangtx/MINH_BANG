@@ -25,16 +25,23 @@ def reload():
 reload()
 
 
+def get_data_insert():
+    global entry_id, entry_ten, entry_gioi_tinh, entry_ngay_sinh, entry_truong
+    gioi_tinh = 1 if entry_gioi_tinh.get() == 'nu' or entry_gioi_tinh.get() == 'Nu' else 0
+    data_insert = f'{entry_id.get()} {entry_ten.get()} {gioi_tinh} {entry_ngay_sinh.get()} {entry_truong.get()[:4]}\n'
+    return data_insert
+
+
 def insert_screen(even):
-    global list_truong_hoc_sinh
+    global list_truong_hoc_sinh, entry_id, entry_ten, entry_gioi_tinh, entry_ngay_sinh, entry_truong
     win_1 = Tk()
     win_1.title('Chen ds')
     width_1 = int((width_screen - 600) / 2)
     heigh_1 = int((hieght_screen - 400) / 2)
     win_1.geometry(f'600x400+{width_1}+{heigh_1}')
-    Label(win_1, text='ID', font='times 15').place(width=150, heigh=50, x=100, y=50)
-    entry_ten = Entry(win_1, font='times 15')
-    entry_ten.place(width=200, heigh=30, x=300, y=60)
+    Label(win_1, text='ID(xxxx)', font='times 15').place(width=150, heigh=50, x=100, y=50)
+    entry_id = Entry(win_1, font='times 15')
+    entry_id.place(width=200, heigh=30, x=300, y=60)
     Label(win_1, text='Họ Tên', font='times 15').place(width=150, heigh=50, x=100, y=100)
     entry_ten = Entry(win_1, font='times 15')
     entry_ten.place(width=200, heigh=30, x=300, y=110)
@@ -47,6 +54,16 @@ def insert_screen(even):
     Label(win_1, text='Trường', font='times 15').place(width=150, heigh=50, x=100, y=250)
     entry_truong = Combobox(win_1, font='times 15', value=ds_truong)
     entry_truong.place(width=200, heigh=30, x=300, y=260)
+
+    def insert():
+        data_insert = get_data_insert()
+        data_get = list_box_student.get(ANCHOR)
+        index = all_line.index(data_get.replace('\n', '')) + 1
+        replace_line('DanhSach.txt', index, data_insert)
+        win_1.destroy()
+
+
+    Button(win_1, text='save', command=insert).place(width=100, heigh=30, x=400, y=300)
     win_1.mainloop()
 
 

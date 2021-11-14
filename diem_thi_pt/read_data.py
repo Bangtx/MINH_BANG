@@ -15,9 +15,6 @@ def get_data_student():
     return list_id_hoc_sinh, list_ten_hoc_sinh, list_truong_hoc_sinh, list_ngay_sinh_hoc_sinh
 
 
-list_id_hoc_sinh, list_ten_hoc_sinh, list_truong_hoc_sinh, list_ngay_sinh_hoc_sinh = get_data_student()
-
-
 def all_lines():
     f = open('DanhSach.txt', 'r', encoding='UTF-8')
     all = f.readlines()
